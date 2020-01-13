@@ -3,14 +3,24 @@ import sys
 def init():
 	if len(sys.argv) > 3:
 		print("InputError: too many arguments")
-	if len(sys.argv) != 1:
+
+	if len(sys.argv) != 3:
 		print("""
 Usage: python operations.py
 Example:
 	python operations.py 10 3""")
 		exit()
-	
-	return int(sys.argv[1]), int(sys.argv[2])
+	try:
+		a = int(sys.argv[1])
+		b = int(sys.argv[2])
+	except ValueError:
+		print("InputError: only numbers")
+		print("""
+Usage: python operations.py
+Example:
+	python operations.py 10 3""")
+		exit()
+	return a, b
 
 def sum(x, y):
 	return str(x + y)
