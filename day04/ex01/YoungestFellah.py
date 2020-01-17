@@ -15,6 +15,7 @@ def youngestFellah(df, year):
 	#print(mal.loc[ mal['Age'] == mal['Age'].min(), :])
 	return { 'f' : fem['Age'].min(), 'm' : mal['Age'].min()}
 
-loader = FileLoader()
-df = loader.load("./resources/athlete_events.csv")
-print(youngestFellah(df, 2004))
+if __name__ == "__main__":
+	loader = FileLoader()
+	df = loader.load("./resources/athlete_events.csv")
+	print(youngestFellah(df, 2004))
